@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Cheque{% endblock %}
+
+{% block body %}
+    <h1>Edit Cheque</h1>
+
+    {{ include('cheque/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-warning" href="{{ path('cheque_index') }}">back to list</a>
+{% endblock %}

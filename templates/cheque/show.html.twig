@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cheque{% endblock %}
+
+{% block body %}
+    <h1>Cheque</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cheque.id }}</td>
+            </tr>
+            <tr>
+                <th>Num</th>
+                <td>{{ cheque.num }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ cheque.montant }}</td>
+            </tr>
+            <tr>
+                <th>ReqAt</th>
+                <td>{{ cheque.reqAt ? cheque.reqAt|date('Y-m-d H:i') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-warning" href="{{ path('cheque_index') }}">back to list</a>
+
+    <a class="btn btn-info" href="{{ path('cheque_edit', {'id': cheque.id}) }}">edit</a>
+{% endblock %}

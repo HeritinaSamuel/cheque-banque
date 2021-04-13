@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-4">
+            <div class="card bg-success text-white mb-3 text-center">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fad fa-money-check fa-3x"></i>
+                        </div>
+                        <div class="col-8">
+                            <h4>{{ stats.cheques }} cheques</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card bg-warning text-white mb-3 text-center">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fad fa-piggy-bank fa-3x"></i>
+                        </div>
+                        <div class="col-8">
+                            <h4>{{ stats.bancs }} banques</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-chart">
+        {{ render_chart(chart, {'class': 'my-chart'}) }}
+    </div>
+{% endblock %}
